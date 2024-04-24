@@ -4,8 +4,10 @@
 
 }
 .template-body{
-    height: 100%;
-    width: 100%;
+
+    display: block;
+    justify-content: center;
+    align-items: center;
 }
 
 .label {
@@ -13,3 +15,82 @@
     font-size: xx-large;
     margin-left: 50px;
 }
+
+
+  
+  .template-card {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: auto;
+    width: 340px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 50px;
+    margin-top: 20px;
+  }
+
+  .template-id-content{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+
+  .template-id-content img{
+    width: 100px;
+    height:80px;
+  }
+
+  .template-border-bottom{
+    height: 30px;
+    width: 100%;
+    background-color: rgb(256,92,4);
+  }
+
+  .template-company-logo{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(256,92,4);
+    margin-left: 40px;
+    margin-top: 20px;
+  }
+  .template-company-logo img{
+      height: 70%;
+      width: 70%;
+  }
+  .template-role{
+    padding: 3px;
+    width: 150px;
+    color: rgb(256,92,4);
+  }
+  .template-company-name{
+    font-weight: 700;
+    color: rgb(256,92,4);
+   
+  }
+
+  .template-title{
+    font-size: small;
+    width: 140px;
+    color: rgb(256,92,4);
+
+  }
+
+  .download-btn{
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 1100px;
+    cursor: pointer;
+  }
+

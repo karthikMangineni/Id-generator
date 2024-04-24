@@ -2,7 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import html2pdf from 'html2pdf.js';
 import "../../pages/IdCard/idCard.css";
-import logo from "../../images/logo1.png"
+import companyLogo from "../../companyLogo.jpeg"
+
+
 function PreviewPage() {
     const location = useLocation();
     const { color, csvData, idPhoto } = location.state;
@@ -12,6 +14,7 @@ function PreviewPage() {
         for(let i = 0; i < idPhoto.length; i++) {
             const imgPath = idPhoto[i].name;
             if (idPhoto[i].name === imgUrl) {
+                console.log("matched ")
                 return idPhoto[i];
             }
         }
@@ -24,10 +27,11 @@ function PreviewPage() {
         const newData = [];
 
         for (let i = 0; i < len; i++) {
-            const [name, jobTitle, csvPhotoUrl] = csvData[i];
+            const [companyName, domain, role, csvPhotoUrl] = csvData[i];
+            console.log("Hello ",companyName, domain, role, csvPhotoUrl)
             const photoData = matchImage(csvPhotoUrl);
-            const photoUrl = URL.createObjectURL(photoData);
-            newData.push({ name, jobTitle, photoUrl });
+           const photoUrl = URL.createObjectURL(photoData);
+            newData.push({ companyName, domain, role, photoUrl });
         }
         setCombinedData(newData);
     };
@@ -71,15 +75,15 @@ function PreviewPage() {
             card.innerHTML = `
                 <div class='id-content'>
                     <div>
-                        <div class='company-name'>${data.name}</div>
-                        <div class='title'>${data.jobTitle}</div>
+                        <div class='company-name'>${data.companyName}</div>
+                        <div class='title'>${data.domain}</div>
                         <div class='company-logo'>
-                            <img src=${logo} alt="Company Logo" />
+                            <img src=${companyLogo} alt="Company Logo" />
                         </div>
                     </div>
                     <div>
                         <img src=${data.photoUrl} alt="ID" />
-                        <div class='role'>software developer</div>
+                        <div class='role'>${data.role}</div>
                     </div>
                 </div>
                 <div class='border-bottom' style="height: 45px; width: 100%; background: ${color}"></div>
@@ -95,6 +99,8 @@ function PreviewPage() {
                 container.appendChild(pageBreak);
             }
         });
+
+        
     
         html2pdf().from(container).set(opt).save();
     };
@@ -110,16 +116,17 @@ function PreviewPage() {
                     <div key={index}>
                         <div className='card' style={{ backgroundColor: 'white' }}>
                             <div className='id-content'>
+                                
                                 <div>
-                                    <div className='company-name'>{data.name}</div>
-                                    <div className='title'>{data.jobTitle}</div>
+                                    <div className='company-name'>{data.companyName}</div>
+                                    <div className='title'>{data.domain}</div>
                                     <div className='company-logo'>
-                                        <img src='https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Saint_Louis_Billikens_logo.svg/800px-Saint_Louis_Billikens_logo.svg.png' alt="Company Logo" />
+                                        <img src={companyLogo} alt="Company Logo" />
                                     </div>
                                 </div>
                                 <div>
                                     <img src={data.photoUrl} alt="ID" />
-                                    <div className='role'>software developer</div>
+                                    <div className='role'>{data.role}</div>
                                 </div>
                             </div>
                             <div className='border-bottom' style={{ height: "45px", width: "100%", background: color }}></div>

@@ -12,6 +12,7 @@
     display: block;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
 
   .id-content{
@@ -28,24 +29,40 @@
   .border-bottom{
     height: 30px;
     width: 100%;
+    background-color: rgb(256,92,4);
   }
 
-  .company-logo img{
+  .company-logo{
     height: 50px;
     width: 50px;
-    margin-top: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(256,92,4);
+    margin-left: 40px;
+    margin-top: 10px;
+  }
+  .company-logo img{
+      height: 70%;
+      width: 70%;
   }
   .role{
     padding: 3px;
     width: 150px;
+    color: rgb(256,92,4);
   }
   .company-name{
     font-weight: 700;
+    color: rgb(256,92,4);
+   
   }
+
   .title{
-    font-size: x-small;
+    font-size: small;
     width: 140px;
-  
+    color: rgb(256,92,4);
+
   }
 
   .download-btn{
@@ -60,3 +77,4 @@
     margin-left: 1100px;
     cursor: pointer;
   }
+
