@@ -1,0 +1,42 @@
+.inputCsv-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.upload-label-text {
+    font-size: xx-large;
+    font-weight: 600;
+    color: rgb(163, 160, 160);
+}
+
+.csv-input {
+    margin: 100px;
+}
+
+.continue-btn{
+    background-color: black;
+    height: 40px;
+    width: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    margin-left: 130px;
+    cursor: pointer;
+}
+.step-number-in-input{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: gray;
+    font-weight: 500;
+}
+
+.back{
+    color: black;
+    font-weight: 800;
+    cursor: pointer;
+}

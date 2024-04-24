@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import IdCard from './pages/IdCard/IdCard'
+import Template from './pages/template/Template'
+import InputCsv from './pages/inputCsvFile/InputCsv'
+import ImageDirectoryInput from './pages/imageDirectory/ImageDirectoryInput'
+import PreviewPage from './pages/Preview/PreviewPage'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<Template/>}></Route>
+            <Route path='/idCard' element={<IdCard/>}/>
+            <Route path="/inputPage" element={<InputCsv/>}></Route>
+            <Route path="/ImageDirectory" element={<ImageDirectoryInput/>}/>
+            <Route path="/previewPage" element={<PreviewPage/>}/>
+        </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App

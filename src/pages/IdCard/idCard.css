@@ -1,0 +1,62 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust column width as needed */
+    grid-gap: 20px; /* Adjust gap between cards */
+    padding: 20px;
+}
+  
+  .card {
+    border: 1px solid #ccc;
+    text-align: center;
+    height: 175px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .id-content{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+  }
+
+  .id-content img{
+    width: 100px;
+    height:80px;
+  }
+
+  .border-bottom{
+    height: 30px;
+    width: 100%;
+  }
+
+  .company-logo img{
+    height: 50px;
+    width: 50px;
+    margin-top: 20px;
+  }
+  .role{
+    padding: 3px;
+    width: 150px;
+  }
+  .company-name{
+    font-weight: 700;
+  }
+  .title{
+    font-size: x-small;
+    width: 140px;
+  
+  }
+
+  .download-btn{
+    background-color: black;
+    color: white;
+    height: 40px;
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-left: 1100px;
+    cursor: pointer;
+  }
