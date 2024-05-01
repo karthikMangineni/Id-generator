@@ -30,6 +30,9 @@
     height: 30px;
     width: 100%;
     background-color: rgb(256,92,4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .company-logo{
@@ -76,5 +79,12 @@
     position: relative;
     margin-left: 1100px;
     cursor: pointer;
+  }
+
+  .employeeName{
+    color: white;
+    font-size: larger;
+    font-weight: 600;
+    letter-spacing: 0.3rem;
   }
 

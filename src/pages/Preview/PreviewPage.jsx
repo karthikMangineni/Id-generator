@@ -27,11 +27,11 @@ function PreviewPage() {
         const newData = [];
 
         for (let i = 0; i < len; i++) {
-            const [companyName, domain, role, csvPhotoUrl] = csvData[i];
+            const [companyName, domain,employeeName, role, csvPhotoUrl] = csvData[i];
             console.log("Hello ",companyName, domain, role, csvPhotoUrl)
             const photoData = matchImage(csvPhotoUrl);
            const photoUrl = URL.createObjectURL(photoData);
-            newData.push({ companyName, domain, role, photoUrl });
+            newData.push({ companyName, domain, employeeName, role, photoUrl });
         }
         setCombinedData(newData);
     };
@@ -86,7 +86,9 @@ function PreviewPage() {
                         <div class='role'>${data.role}</div>
                     </div>
                 </div>
-                <div class='border-bottom' style="height: 45px; width: 100%; background: ${color}"></div>
+                <div class='border-bottom' style="height: 45px; width: 100%; background: ${color}">
+                <div className='employeeName' style="color: white; font-size: larger; font-weight: 600; letter-spacing: 0.3rem;">${data.employeeName}</div>
+                </div>
             `;
             cardContainer.appendChild(card);
     
@@ -129,7 +131,9 @@ function PreviewPage() {
                                     <div className='role'>{data.role}</div>
                                 </div>
                             </div>
-                            <div className='border-bottom' style={{ height: "45px", width: "100%", background: color }}></div>
+                            <div className='border-bottom' style={{ height: "45px", width: "100%", background: color }}>
+                                <div className='employeeName'>{data.employeeName}</div>
+                            </div>
                         </div>
                     </div>
                 ))}
